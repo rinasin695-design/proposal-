@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Mamma ❤️</title>
+
+<style>
+body{
+margin:0;
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
+font-family:Arial,sans-serif;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+overflow:hidden;
+text-align:center;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 0 20px rgba(0,0,0,.3);
+width:85%;
+max-width:500px;
+z-index:10;
+}
+
+h1{color:#e91e63;}
+button{
+padding:15px 30px;
+font-size:20px;
+border:none;
+border-radius:10px;
+margin:10px;
+cursor:pointer;
+}
+
+#yes{background:#4CAF50;color:white;}
+#no{background:#f44336;color:white;}
+
+.heart{
+position:absolute;
+color:red;
+font-size:25px;
+animation:fall 6s linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-100vh);}
+100%{transform:translateY(100vh);}
+}
+</style>
+
+</head>
+<body>
+
+<div class="card">
+<h1>❤️ Hi Mamma ❤️</h1>
+
+<p>
+Mamma... ❤️<br><br>
+Tum meri duniya ho. 🥹💖<br>
+Main hamesha tumhare saath rehna chahta hoon.
+</p>
+
+<h2>Will You Stay With Me Forever? 💍</h2>
+
+<button id="yes" onclick="yes()">Yes ❤️</button>
+
+<button id="no"
+onmouseover="move()"
+onclick="alert('😂 Arre Mamma, No ka option disabled hai! ❤️')">
+No 😅
+</button>
+
+</div>
+
+<script>
+function yes(){
+document.body.innerHTML=`
+<div style="display:flex;justify-content:center;align-items:center;height:100vh;background:pink;font-family:Arial;text-align:center;">
+<div>
+<h1 style="font-size:60px;">🎉 I LOVE YOU MAMMA ❤️</h1>
+<h2>Thank You For Saying YES 🥹💍</h2>
+<h3>❤️ Forever Together ❤️</h3>
+</div>
+</div>`;
+}
+
+function move(){
+let btn=document.getElementById("no");
+btn.style.position="absolute";
+btn.style.left=Math.random()*80+"%";
+btn.style.top=Math.random()*80+"%";
+}
+
+setInterval(()=>{
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="❤️";
+h.style.left=Math.random()*100+"%";
+h.style.fontSize=(20+Math.random()*30)+"px";
+document.body.appendChild(h);
+
+setTimeout(()=>h.remove(),6000);
+},300);
+</script>
+<audio id="music" autoplay loop>
+  <source src="love.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+document.addEventListener("click", function () {
+  document.getElementById("music").play();
+}, { once: true });
+</script>
+</body>
+</html>
