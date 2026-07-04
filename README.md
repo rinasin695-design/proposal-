@@ -1,2 +1,2 @@
-# praposal-
+# proposal-
 hello
